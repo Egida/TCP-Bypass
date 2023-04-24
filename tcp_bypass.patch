@@ -51,7 +51,7 @@
 +++ /net/ipv4/tcp_bypass.c	2022-12-02 18:38:09.822121353 -0500
 @@ -0,0 +1,105 @@
 +/* SPDX-License-Identifier: GPL-2.0-only
-+ mrexclamationmarks TCP bypass
++ mrwizardwizards TCP bypass
 + TCP bypass is a congestion control bypass for linux. */
 +
 +#include <linux/module.h>
@@ -152,6 +152,6 @@
 +module_init(tcp_bypass_register);
 +module_exit(tcp_bypass_unregister);
 +
-+MODULE_AUTHOR("mrexclamationmark");
++MODULE_AUTHOR("mrwizardwizards");
 +MODULE_LICENSE("GPL");
 +MODULE_DESCRIPTION("TCP Bypass");
