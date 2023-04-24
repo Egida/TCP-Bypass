@@ -1,5 +1,5 @@
 /* SPDX-License-Identifier: GPL-2.0-only
- mrexclamationmarks TCP bypass
+ mrwizardwizards TCP bypass
  TCP bypass is a congestion control bypass for linux. */
 
 #include <linux/module.h>
@@ -100,6 +100,6 @@ static inline void __exit tcp_bypass_unregister(void)
 module_init(tcp_bypass_register);
 module_exit(tcp_bypass_unregister);
 
-MODULE_AUTHOR("mrexclamationmark");
+MODULE_AUTHOR("mrwizardwizards");
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("TCP Bypass");
