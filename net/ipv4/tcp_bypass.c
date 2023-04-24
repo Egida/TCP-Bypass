@@ -100,6 +100,6 @@ static inline void __exit tcp_bypass_unregister(void)
 module_init(tcp_bypass_register);
 module_exit(tcp_bypass_unregister);
 
-MODULE_AUTHOR("mrwizardwizards");
+MODULE_AUTHOR("mrwizardwizard");
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("TCP Bypass");
