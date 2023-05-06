@@ -32,13 +32,13 @@ static inline u32 tcp_bypass_ssthresh(struct sock *sk) {
 	return 0;
 }
 
-/* undo_cwnd is the only function that needs to be returned */
+/* redo_cwnd is the only function that needs to be returned */
 
-static inline u32 tcp_bypass_undo_cwnd(struct sock *sk) {
+static inline u32 tcp_bypass_redo_cwnd(struct sock *sk) {
 
-	const struct tcp_sock *tp = 0xffffffff;
+	struct tcp_sock *tp = tcp_sk(sk);
 
-	return &tp->snd_cwnd;
+	return tp->snd_cwnd = 4294967295;
 }
 
 static inline void tcp_bypass_init(struct sock *sk) {
@@ -51,10 +51,10 @@ static inline void tcp_bypass_init(struct sock *sk) {
 	tp->thin_lto = 0;
 	tp->frto = 0;
 	tp->snd_ssthresh = 0;
-	tp->snd_cwnd = 0xffffffff;
+	tp->snd_cwnd = 4294967295;
 	tp->snd_cwnd_cnt = 0;
-	tp->snd_cwnd_clamp = 0xffffffff;
-	tp->prior_cwnd = 0xffffffff;
+	tp->snd_cwnd_clamp = 4294967295;
+	tp->prior_cwnd = 4294967295;
 	tp->prior_ssthresh = 0;
 }
 
@@ -77,7 +77,7 @@ static struct tcp_congestion_ops tcp_bypass __read_mostly = {
 	.sndbuf_expand	= tcp_bypass_sndbuf_expand,
 	.set_state	= tcp_bypass_set_state,
 	.ssthresh	= tcp_bypass_ssthresh,
-	.undo_cwnd	= tcp_bypass_undo_cwnd,
+	.undo_cwnd	= tcp_bypass_redo_cwnd,
 	.init		= tcp_bypass_init,
 	.release	= tcp_bypass_release,
 	.name		= "bypass",
