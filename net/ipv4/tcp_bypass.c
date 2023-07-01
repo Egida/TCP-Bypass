@@ -32,13 +32,12 @@ static inline u32 tcp_bypass_ssthresh(struct sock *sk) {
 	return 0;
 }
 
-/* redo_cwnd is the only function that needs to be returned */
-
 static inline u32 tcp_bypass_redo_cwnd(struct sock *sk) {
 
-	const struct tcp_sock *tp = 4294967295;
+	struct tcp_sock *tp = tcp_sk(sk);
+	tp->snd_cwnd = 4294967295;
 
-	return &tp->snd_cwnd;
+	return 1;
 }
 
 static inline void tcp_bypass_init(struct sock *sk) {
