@@ -1,4 +1,8 @@
 /* SPDX-License-Identifier: GPL-2.0-only
+ 
+ mrwizardwizard's github
+ https://github.com/mrwizardwizard
+ 
  mrwizardwizards TCP bypass
  TCP bypass is a congestion control bypass for linux. */
 
