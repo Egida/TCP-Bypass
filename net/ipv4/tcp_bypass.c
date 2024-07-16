@@ -17,7 +17,7 @@ static inline void tcp_bypass_in_ack_event(struct sock *sk, u32 flags) {
 static inline void tcp_bypass_pkts_acked(struct sock *sk, const struct ack_sample *sample) {
 }
 
-static inline void tcp_bypass_cong_control(struct sock *sk, const struct rate_sample *rs) {
+static inline void tcp_bypass_cong_control(struct sock *sk, u32 ack, int flag, const struct rate_sample *rs) {
 }
 
 static inline void tcp_bypass_cwnd_event(struct sock *sk, enum tcp_ca_event ev) {
