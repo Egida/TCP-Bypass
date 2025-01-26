@@ -1,6 +1,6 @@
 **TCP-Bypass**
 
-***Tested on Linux-6.12***
+***Tested on Linux-6.13***
 
 TCP-Bypass is used to bypass linux's tcp congestion control algorithms (Avoid using TCP congestion control algorithms and use qdiscs or minstrel instead for QoS).
 
